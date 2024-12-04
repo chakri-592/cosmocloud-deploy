@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend-container
+          image: shreybatra/sample-backend
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: redis-config
+                  key: REDIS_URI
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config
+data:
+  REDIS_URI: redis://redis-svc:6379
