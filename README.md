@@ -55,7 +55,6 @@ Redis
 - Deployment File: redis-deployment.yml
 - Service File: redis-service.yml
 ##### Key Details:
-
 - Image: redis
 - Port: 6379
 
