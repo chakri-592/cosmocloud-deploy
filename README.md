@@ -1,3 +1,22 @@
+## Project Structure
+```
+
+.
+|  
+├── cosmocloud-deploy
+│   ├── Charts.yml      
+├── templates/
+│    └── backend-deployment.yml
+|    └── backend-service.yml
+|    └── frontend-deployment.yml
+│    └── frontend-service.yml
+|    └── redis-deployment.yml
+|    └── redis-service.yml
+├── README.md
+└── .
+
+```
+
 # cosmocloud-deploy
 Cosmocloud-Deploy is a Helm chart designed to deploy a backend, frontend, and Redis for a cloud-native application. This project simplifies the deployment of these components using Kubernetes.
 
