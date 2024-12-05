@@ -4,10 +4,9 @@ metadata:
   name: frontend-svc
   namespace: {{ .Values.namespace }}
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 5175
       targetPort: 5175
-      nodePort: 31000
   selector:
     app: frontend
